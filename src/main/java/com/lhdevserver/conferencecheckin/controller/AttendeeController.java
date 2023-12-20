@@ -10,7 +10,7 @@ import com.lhdevserver.conferencecheckin.model.Attendee;
 
 
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/attendee")
 public class AttendeeController {
     @Autowired
     private AttendeeService attendeeService;
