@@ -2,11 +2,10 @@ package com.lhdevserver.conferencecheckin.controller;
 
 import com.lhdevserver.conferencecheckin.service.AttendeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.lhdevserver.conferencecheckin.model.Attendee;
+
+import java.util.List;
 
 
 @RestController
@@ -19,5 +18,10 @@ public class AttendeeController {
     public String add(@RequestBody Attendee attendee){
         attendeeService.saveAttendee(attendee);
         return "Attendee has checked in to Conference Hall A";
+    }
+
+    @GetMapping("/getAll")
+    public List<Attendee> getAllAttendees(){
+        return attendeeService.getAllAttendees();
     }
 }

@@ -5,6 +5,8 @@ import com.lhdevserver.conferencecheckin.repository.AttendeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AttendeeServiceImpl implements AttendeeService {
 
@@ -13,5 +15,10 @@ public class AttendeeServiceImpl implements AttendeeService {
     @Override
     public Attendee saveAttendee(Attendee attendee) {
         return attendeeRepository.save(attendee);
+    }
+
+    @Override
+    public List<Attendee> getAllAttendees() {
+        return attendeeRepository.findAll();
     }
 }
